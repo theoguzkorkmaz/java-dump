@@ -1,0 +1,37 @@
+/*
+*
+* Java ile kullanıcıdan boy ve kilo değerlerini alıp bir değişkene atayın. Aşağıdaki formüle göre kullanıcının "Vücut Kitle İndeks" değerini hesaplayıp ekrana yazdırın.
+* Formül: Kilo (kg) / Boy(m) * Boy(m)
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        double boy, kilo, vki;
+        System.out.print("Boyunuzu girin: ");
+        boy = scan.nextDouble();
+
+        System.out.print("Kilonuzu girin: ");
+        kilo = scan.nextDouble();
+
+        vki = kilo / (boy * boy);
+        if(vki < 18.5) {
+            System.out.println("Boyunuz: "+boy+", kilonuz: "+kilo+"\nVKİ'niz: "+vki+"\nİdeal kilonuzun altındasınız.");
+        }
+        else if(vki>18.5 && vki<24.9) {
+            System.out.println("Boyunuz: "+boy+", kilonuz: "+kilo+"\nVKİ'niz: "+vki+"\nİdeal kilonuzdasınız.");
+        }
+        else if(vki>24.9 && vki<29.9) {
+            System.out.println("Boyunuz: "+boy+", kilonuz: "+kilo+"\nVKİ'niz: "+vki+"\nİdeal kilonuzun çok üstündesiniz.");
+        }
+        else if(vki>29.9 && vki<39.9) {
+            System.out.println("Boyunuz: "+boy+", kilonuz: "+kilo+"\nVKİ'niz: "+vki+"\nİdeal kilonuzun çok üstündesiniz - OBEZ.");
+        }
+        else {
+            System.out.println("Boyunuz: "+boy+", kilonuz: "+kilo+"\nVKİ'niz: "+vki+"\nİdeal kilonuzun çok çok üstündesiniz - MORBİD OBEZ.");
+        }
+    }
+}

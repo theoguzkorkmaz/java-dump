@@ -1,0 +1,47 @@
+/*
+*
+* Java ile Matematik, Fizik, Kimya, Türkçe, Tarih, Müzik derslerinin sınav puanlarını kullanıcıdan alan ve ortalamalarını hesaplayıp ekrana bastırılan programı yazın.
+* Aynı program içerisinde koşullu ifadeler kullanılarak, eğer kullanıcının ortalaması 60'dan büyük ise ekrana "Sınıfı Geçti" , küçük ise "Sınıfta Kaldı" yazsın.
+* Not: If-else kullanmayınız!
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int matematik, fizik, kimya, turkce, tarih, muzik, ortalama;
+
+        System.out.print("Matematik notunuz: ");
+        matematik = scan.nextInt();
+
+        System.out.print("Fizik notunuz: ");
+        fizik = scan.nextInt();
+
+        System.out.print("Kimya notunuz: ");
+        kimya = scan.nextInt();
+
+        System.out.print("Türkçe notunuz: ");
+        turkce = scan.nextInt();
+
+        System.out.print("Tarih notunuz: ");
+        tarih = scan.nextInt();
+
+        System.out.print("Müzik notunuz: ");
+        muzik = scan.nextInt();
+
+        ortalama = (matematik + fizik + kimya + turkce + tarih + muzik) / 5;
+
+        System.out.println("Matematik notunuz: "+matematik);
+        System.out.println("Fizik notunuz: "+fizik);
+        System.out.println("Kimya notunuz: "+kimya);
+        System.out.println("Türkçe notunuz: "+turkce);
+        System.out.println("Tarih notunuz: "+tarih);
+        System.out.println("Müzik notunuz: "+muzik);
+        System.out.println("#--------------------------#");
+        System.out.println("Ortalamanız: "+ortalama);
+        System.out.println("Geçme durumunuz: "+ ((ortalama > 60) ? "Geçtiniz":"Kaldınız"));
+    }
+}

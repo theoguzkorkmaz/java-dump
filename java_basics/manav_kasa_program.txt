@@ -1,0 +1,51 @@
+/*
+*
+* Java ile kullanıcıların manavdan almış oldukları ürünlerin kilogram değerlerine göre toplam tutarını ekrana yazdıran programı yazın.
+* Meyveler ve KG fiyatları:
+* Armut 2,14
+* Elma 3,67
+* Domates 1,11
+* Muz 0,95
+* Patlıcan 5,0
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        float armut = 2.14f, elma = 3.67f, domates = 1.11f, muz = 0.95f, patlican = 5f;
+        int armutKilo, elmaKilo, domatesKilo, muzKilo, patlicanKilo;
+
+        System.out.print("Kaç kilo armut? ");
+        armutKilo = scan.nextInt();
+        System.out.print("Kaç kilo elma? ");
+        elmaKilo = scan.nextInt();
+        System.out.print("Kaç kilo domates? ");
+        domatesKilo = scan.nextInt();
+        System.out.print("Kaç kilo muz? ");
+        muzKilo = scan.nextInt();
+        System.out.print("Kaç kilo patlıcan? ");
+        patlicanKilo = scan.nextInt();
+
+        double hesap = (armut * armutKilo) + (elma * elmaKilo) + (domates * domatesKilo) + (muz * muzKilo) + (patlican * patlicanKilo);
+        if(armutKilo > 0) {
+         System.out.print(armutKilo+" kilo armut, ");
+        }
+        if(elmaKilo > 0) {
+            System.out.print(elmaKilo+" kilo elma, ");
+        }
+        if(domatesKilo > 0) {
+            System.out.print(domatesKilo+" kilo domates, ");
+        }
+        if(muzKilo > 0) {
+            System.out.print(muzKilo+" kilo muz, ");
+        }
+        if(patlicanKilo > 0) {
+            System.out.print(patlicanKilo+" kilo patlıcan");
+        }
+        System.out.print(" aldınız. \nHesabınız: "+hesap+"₺");
+    }
+}

@@ -1,0 +1,29 @@
+/*
+*
+* Üç kenar uzunluğunu kullanıcıdan aldığınız üçgenin alanını hesaplayan programı yazınız.
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int k1, k2, k3;
+        System.out.print("Birinci kenar: ");
+        k1 = scan.nextInt();
+        System.out.print("İkinci kenar: ");
+        k2 = scan.nextInt();
+        System.out.print("Üçüncü kenar: ");
+        k3 = scan.nextInt();
+
+        int u = (k1 + k2 + k3) / 2;
+        int cevre = 2 * u;
+        int alan = (int) Math.sqrt(u * (u - k1) * (u - k2) * (u - k3));
+
+        System.out.println("Kenar uzunlukları: "+k1+","+k2+","+k3);
+        System.out.println("Çevresi: "+cevre);
+        System.out.println("Alanı: "+alan);
+    }
+}

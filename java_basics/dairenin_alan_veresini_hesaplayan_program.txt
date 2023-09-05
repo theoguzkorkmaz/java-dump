@@ -1,0 +1,22 @@
+/*
+*
+* Java ile yarı çapını kullanıcıdan aldığınız dairenin alanını ve çevresini hesaplayan programı yazın.
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Yarıçapı girin:");
+        double r = scan.nextDouble();
+        float pi = 3.14f;
+
+        double alan = pi * r * r;
+        double cevre = 2 * pi * r;
+
+        System.out.println(r+" yarıçaplı dairenin, alanı: "+alan+", çevresi: "+cevre);
+    }
+}
