@@ -1,0 +1,24 @@
+/*
+*
+* Artık yıl hesaplama
+* Artık yıl: Artık yıl, Miladî takvimde 365 yerine 366 günü olan yıl. Bu fazladan gün (artık gün), normalde 28 gün olan şubat ayına 29 Şubat’ın eklenmesi ile elde edilir.
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Yıl giriniz: ");
+        int getYil = scan.nextInt();
+
+        if((getYil % 4 == 0 && getYil % 100 != 0) || getYil % 400 == 0) {
+            System.out.println(getYil+" yılı artık bir yıldır.");
+        }
+        else {
+            System.out.println(getYil+" yılı artık bir yıl değildir.");
+        }
+    }
+}

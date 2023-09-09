@@ -1,0 +1,58 @@
+/*
+*
+* Burç bulan program
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Doğum ayınızı girin: ");
+        int getAy = scan.nextInt();
+        System.out.print("Doğum gününüzü girin: ");
+        int getGun = scan.nextInt();
+
+        if (getAy == 1) {
+            System.out.println((getGun<=21) ? "Oğlak Burcu" : "Kova Burcu");
+        }
+        else if (getAy == 2) {
+            System.out.println((getGun<=19) ? "Kova Burcu" : "Balık Burcu");
+        }
+        else if (getAy == 3) {
+            System.out.println((getGun<=20) ? "Balık Burcu" : "Koç Burcu");
+        }
+        else if (getAy == 4) {
+            System.out.println((getGun<=20) ? "Koç Burcu" : "Boğa Burcu");
+        }
+        else if (getAy == 5) {
+            System.out.println((getGun<=21) ? "Boğa Burcu" : "İkizler Burcu");
+        }
+        else if (getAy == 6) {
+            System.out.println((getGun<=22) ? "İkizler Burcu" : "Yengeç Burcu");
+        }
+        else if (getAy == 7) {
+            System.out.println((getGun<=22) ? "Yengeç Burcu" : "Aslan Burcu");
+        }
+        else if (getAy == 8) {
+            System.out.println((getGun<=22) ? "Aslan Burcu" : "Başak Burcu");
+        }
+        else if (getAy == 9) {
+            System.out.println((getGun<=22) ? "Başak Burcu" : "Terazi Burcu");
+        }
+        else if (getAy == 10) {
+            System.out.println((getGun<=22) ? "Terazi Burcu" : "Akrep Burcu");
+        }
+        else if (getAy == 11) {
+            System.out.println((getGun<=21) ? "Akrep Burcu" : "Yay Burcu");
+        }
+        else if (getAy == 12) {
+            System.out.println((getGun<=21) ? "Yay Burcu" : "Oğlak Burcu");
+        }
+        else {
+            System.out.println("1-12 arasında bir değer giriniz1");
+        }
+    }
+}

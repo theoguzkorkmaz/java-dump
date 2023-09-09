@@ -1,0 +1,63 @@
+/*
+*
+* Basit ATM projesi:
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        String kullaniciAdi = "theog";
+        String sifre = "123";
+
+        int girisHakki = 3;
+        int bakiye = 50000;
+        int secim;
+
+        while (girisHakki > 0) {
+            System.out.print("Kullanıcı adınız: ");
+            String getKullaniciAdi = scan.nextLine();
+            System.out.print("Şifreniz: ");
+            String getSifre = scan.nextLine();
+
+            if(kullaniciAdi.equals(getKullaniciAdi) && sifre.equals(getSifre)) {
+                System.out.println("Bankamıza hoşgeldiniz, "+kullaniciAdi);
+
+                do {
+                    System.out.print("1-Para yatırma\n2-Para çekme\n3-Bakiye sorgulama\n4-Çıkış\nİşleminizi seçin:");
+                    secim = scan.nextInt();
+
+                    switch (secim) {
+                        case 1:
+                            System.out.print("Yatırmak istediğiniz bakiyeyi girin: ");
+                            int getYatacakBakiye = scan.nextInt();
+                            bakiye += getYatacakBakiye;
+                            System.out.println("İşlem sonrası hesabınızda "+bakiye+" tutarında bakiye kaldı!");
+                            break;
+                        case 2:
+                            System.out.print("Çekmek istediğiniz bakiyeyi girin: ");
+                            int getCekilecekBakiye = scan.nextInt();
+                            bakiye -= getCekilecekBakiye;
+                            System.out.println("İşlem sonrası hesabınızda "+bakiye+" tutarında bakiye kaldı!");
+                            break;
+                        case 3:
+                            System.out.println("Bakiyeniz: "+bakiye);
+                            break;
+                    }
+                }while (secim != 4);
+            }
+            else {
+                girisHakki--;
+                System.out.println("Hatalı kullanıcı adı veya şifre. Tekrar deneyiniz.");
+                if (girisHakki == 0) {
+                    System.out.println("Hesabınız bloke olmuştur lütfen banka ile iletişime geçiniz.");
+                } else {
+                    System.out.println("Kalan Hakkınız : " + girisHakki);
+                }
+            }
+        }
+    }
+}

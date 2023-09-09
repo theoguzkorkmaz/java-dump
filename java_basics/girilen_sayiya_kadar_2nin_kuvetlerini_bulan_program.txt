@@ -1,0 +1,20 @@
+/*
+*
+* Java döngüler ile girilen sayıya kadar olan 2'nin kuvvetlerini ekrana yazdıran programı yazıyoruz.
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Bir sayı girin: ");
+        int getSayi = scan.nextInt();
+
+        for (int i=1; i<=getSayi; i++) {
+            System.out.println(Math.pow(2,i));
+        }
+    }
+}

@@ -1,0 +1,30 @@
+/*
+*
+* Java döngüler ile negatif bir değer girilene kadar kullanıcıdan girişleri kabul eden ve girilen değerlerden tek sayıları toplayıp ekrana basan programı yazıyoruz.
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int getDeger;
+        int donguSayisi = 0;
+        int degerlerToplami = 0;
+        do {
+            System.out.print("Bir değer girin: ");
+            getDeger = scan.nextInt();
+
+            if (getDeger % 2 == 1) {
+                degerlerToplami += getDeger;
+            }
+
+            donguSayisi++;
+        } while(getDeger > 0);
+
+        System.out.println("Sistem "+donguSayisi+" adet sayı toplamıştır ve "+degerlerToplami+" sonucunu bulmuştur.");
+
+    }
+}

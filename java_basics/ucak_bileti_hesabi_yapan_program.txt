@@ -1,0 +1,64 @@
+/*
+*
+* Java ile mesafeye ve şartlara göre uçak bileti fiyatı hesaplayan programı yapın. Kullanıcıdan Mesafe (KM), yaşı ve yolculuk tipi (Tek Yön, Gidiş-Dönüş) bilgilerini alın. Mesafe başına ücret 0,10 TL / km olarak alın. İlk olarak uçuşun toplam fiyatını hesaplayın ve sonrasında ki koşullara göre müşteriye aşağıdaki indirimleri uygulayın ;
+* Kullanıcıdan alınan değerler geçerli (mesafe ve yaş değerleri pozitif sayı, yolculuk tipi ise 1 veya 2) olmalıdır. Aksi takdirde kullanıcıya "Hatalı Veri Girdiniz !" şeklinde bir uyarı verilmelidir.
+* Kişi 12 yaşından küçükse bilet fiyatı üzerinden %50 indirim uygulanır.
+* Kişi 12-24 yaşları arasında ise bilet fiyatı üzerinden %10 indirim uygulanır.
+* Kişi 65 yaşından büyük ise bilet fiyatı üzerinden %30 indirim uygulanır.
+* Kişi "Yolculuk Tipini" gidiş dönüş seçmiş ise bilet fiyatı üzerinden %20 indirim uygulanır.
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Mesafe bilgisini giriniz: ");
+        double getMesafe = scan.nextDouble();
+        if(getMesafe < 0) {
+            System.out.println("Gidilecek mesafe sıfırdan küçük olamaz!");
+            System.exit(0);
+        }
+
+        System.out.print("Yaşınızı giriniz: ");
+        int getYas = scan.nextInt();
+        if(getYas < 0) {
+            System.out.println("Yaşınız sıfırdan küçük olamaz!");
+            System.exit(0);
+        }
+        System.out.print("Yolculuk tipinizi seçiniz. \n1- Tek yön, 2- Gidiş dönüş:");
+        int getYolculukTipi = scan.nextInt();
+
+        double mesafeBasinaUcret = 0.10;
+        double odenecekUcret = getMesafe * mesafeBasinaUcret;
+
+        if(getYas <= 12) {
+            System.out.println("12 yaşından küçük olduğunuz için %50 indirim uygulandı.");
+            odenecekUcret -= (odenecekUcret * 0.5);
+        }
+        else if(getYas > 12 && getYas < 24) {
+            System.out.println("Yaşınız 12-24 arasında olduğu için %10 indirim uygulandı.");
+            odenecekUcret -= (odenecekUcret * 0.1);
+        }
+        else if(getYas >= 65) {
+            System.out.println("65 yaşından büyük olduğunuz için %30 indirim uygulandı.");
+            odenecekUcret -= (odenecekUcret * 0.3);
+        }
+
+        if(getYolculukTipi == 1) {
+            System.out.println("Ödenecek ücret: "+odenecekUcret);
+        }
+        else if(getYolculukTipi == 2) {
+            System.out.println("Yolculuk tipiniz Gidiş-Dönüş olduğu için %20 indirim uygulandı.");
+            odenecekUcret -= odenecekUcret * 0.2;
+            odenecekUcret *= 2;
+            System.out.println("Ödenecek ücret: "+odenecekUcret);
+        }
+        else {
+            System.out.println("Yolculuk tipiniz sadece 1 veya 2 olabilir. Yanlış tuşlama yaptınız!");
+            System.exit(0);
+        }
+    }
+}

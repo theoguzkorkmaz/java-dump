@@ -1,0 +1,60 @@
+/*
+*
+* Dersler : Matematik, Fizik, Türkçe, Kimya, Müzik
+* Geçme Notu : 55
+* Eğer girilen ders notları 0 veya 100 arasında değil ise ortalamaya katılmasın.
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Matematik notunuz girin: ");
+        int matematik = scan.nextInt();
+
+        System.out.print("Fizik notunuzu girin: ");
+        int fizik = scan.nextInt();
+
+        System.out.print("Türkçe notunuzu girin: ");
+        int turkce = scan.nextInt();
+
+        System.out.print("Kimya notunuzu girin: ");
+        int kimya = scan.nextInt();
+
+        System.out.print("Müzik notunuzu girin: ");
+        int muzik = scan.nextInt();
+
+        int dersSayisi = 5;
+        if (matematik<0 || matematik>100) {
+            matematik = 0;
+            System.out.println("Matematik notunuz dahil edilmedi!");
+            dersSayisi--;
+        }
+        if (fizik<0 || fizik>100) {
+            fizik = 0;
+            System.out.println("Fizik notunuz dahil edilmedi!");
+            dersSayisi--;
+        }
+        if (turkce<0 || turkce>100) {
+            turkce = 0;
+            System.out.println("Türkçe notunuz dahil edilmedi!");
+            dersSayisi--;
+        }
+        if (kimya<0 || kimya>100) {
+            kimya = 0;
+            System.out.println("Kimya notunuz dahil edilmedi!");
+            dersSayisi--;
+        }
+        if (muzik<0 || muzik>100) {
+            muzik = 0;
+            System.out.println("Müzik notunuz dahil edilmedi!");
+            dersSayisi--;
+        }
+
+        double ortalama = (matematik + fizik + turkce + kimya + muzik)/dersSayisi;
+        System.out.println("Ortalama: "+ortalama);
+    }
+}

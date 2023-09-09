@@ -1,0 +1,26 @@
+/*
+*
+* Kullanıcı girişi
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Kullanıcı adınız: ");
+        String userName = scan.nextLine();
+
+        System.out.print("Şifreniz: ");
+        String password = scan.nextLine();
+
+        if (userName.equals("theoguz") && password.equals("123")) {
+            System.out.println("Welcome!");
+        }
+        else {
+            System.out.println("Check your inputs!");
+        }
+    }
+}

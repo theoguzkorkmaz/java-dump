@@ -1,0 +1,26 @@
+/*
+*
+* üslü sayı hesaplayan program
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Bir sayı girin: ");
+        int getSayi = scan.nextInt();
+        System.out.print("Bir üs giriniz: ");
+        int getUs = scan.nextInt();
+
+        int i = 1;
+        int toplam = 1;
+        while (i <= getUs) {
+            toplam *= getSayi;
+            i++;
+        }
+        System.out.println("Cevap: "+toplam);
+    }
+}
