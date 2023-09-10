@@ -1,0 +1,104 @@
+/*
+*
+* Gelişmiş hesap makinası
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    static int sum(int a, int b) {
+        int result = a + b;
+        System.out.println("Toplam: "+result);
+        return a+b;
+    }
+
+    static int minus(int a, int b) {
+        int result = a - b;
+        System.out.println("Fark: "+result);
+        return a-b;
+    }
+
+    static int times(int a, int b) {
+        int result = a * b;
+        System.out.println("Çarpım: "+result);
+        return a*b;
+    }
+
+    static int divide(int a, int b) {
+        int result = a / b;
+        System.out.println("Bölüm: "+result);
+        return a/b;
+    }
+
+    static int power(int a, int b) {
+        int result = (int) Math.pow(a,b);
+        System.out.println("Üs: "+result);
+        return (int) Math.pow(a,b);
+    }
+
+    static int mod(int a, int b) {
+        int result = a % b;
+        System.out.println("Mod: "+result);
+        return a % b;
+    }
+
+    static void rectangle(int a, int b) {
+        int cevre = (a + b) * 2;
+        int alan = a*b;
+        System.out.println("Çevre: "+cevre+" Alan: "+alan);
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int select;
+
+        String menu = "1- Toplama işlemi\n"+
+                "2- Çıkarma işlemi\n" +
+                "3- Çarpma işlemi\n" +
+                "4- Bölme işlemi\n" +
+                "5- Üslü sayı hesaplama\n" +
+                "6- Mod alma\n" +
+                "7- Dikdörtgen alanı ve çevre hesabı\n"+
+                "8- Çıkış yap\n" +
+                "seçinizi giriniz: ";
+
+        while (true){
+            System.out.print(menu);
+            select = scan.nextInt();
+
+            if (select == 0) {
+                System.out.println("Güle güle 😔");
+                break;
+            }
+
+            System.out.print("Birinci sayıyı girin: ");
+            int a = scan.nextInt();
+            System.out.print("İkinci sayıyı girin: ");
+            int b = scan.nextInt();
+
+            switch (select) {
+                case 1:
+                    sum(a, b);
+                    break;
+                case 2:
+                    minus(a, b);
+                    break;
+                case 3:
+                    times(a,b);
+                    break;
+                case 4:
+                    divide(a, b);
+                    break;
+                case 5:
+                    power(a,b);
+                    break;
+                case 6:
+                    mod(a,b);
+                    break;
+                case 7:
+                    rectangle(a,b);
+                    break;
+            }
+        }
+    }
+}

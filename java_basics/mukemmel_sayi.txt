@@ -1,0 +1,29 @@
+/*
+*
+* Mükemmel sayı
+*
+* */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int toplam = 0;
+        System.out.print("Bir sayı giriniz: ");
+        int getSayi = scan.nextInt();
+
+        for (int i=1; i<getSayi; i++) {
+            if (getSayi%i==0) {
+                toplam+=i;
+            }
+        }
+        if (getSayi == toplam) {
+            System.out.println(getSayi+" mükemmel bir sayıdır.");
+        }
+        else {
+            System.out.println(getSayi+" mükemmel bir sayı değildir.");
+        }
+    }
+}
